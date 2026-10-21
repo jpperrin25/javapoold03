@@ -4,8 +4,8 @@ public class Astronaut {
 
     private final String name;
     private final int id;
-    private final int snacks;
-    private final String destination;
+    private int snacks;
+    private String destination;
 
     public Astronaut(String name) {
         this.name = name;
@@ -30,5 +30,28 @@ public class Astronaut {
 
     public String getDestination() {
         return this.destination;
+    }
+
+    public void doActions() {
+        System.out.println(this.name + ": Nothing to do.");
+        showSnackMessage();
+    }
+
+    public void doActions(planet.Mars mars) {
+        System.out.println(this.name + ": Started a mission!");
+        this.destination = mars.getLandingSite();
+        showSnackMessage();
+    }
+
+    public void doActions(chocolate.Mars mars) {
+        System.out.println(this.name + ": Thanks for this Mars number " + mars.getId());
+        this.snacks++;
+        showSnackMessage();
+    }
+
+    private void showSnackMessage() {
+        if (this.destination == null) {
+            System.out.println(this.name + ": I may have done nothing, but I have " + this.snacks + " Mars to eat at least!");
+        }
     }
 }
