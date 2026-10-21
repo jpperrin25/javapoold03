@@ -1,4 +1,6 @@
 
+import planet.moon.Phobos;
+
 public class Astronaut {
     private static int nextId = 0;
 
@@ -46,6 +48,12 @@ public class Astronaut {
     public void doActions(chocolate.Mars mars) {
         System.out.println(this.name + ": Thanks for this Mars number " + mars.getId());
         this.snacks++;
+        showSnackMessage();
+    }
+
+    public void doActions(Phobos phobos) {
+        System.out.println(this.name + ": Started a mission!");
+        this.destination = phobos.getLandingSite();
         showSnackMessage();
     }
 
