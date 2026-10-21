@@ -54,7 +54,7 @@ public class Team {
     }
 
     public void doActions() {
-        System.out.println(this.name + ": Nothing to do");
+        System.out.println(this.name + ": Nothing to do.");
     }
 
     public void doActions(chocolate.Mars mars) {
